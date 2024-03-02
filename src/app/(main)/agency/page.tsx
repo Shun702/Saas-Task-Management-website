@@ -40,7 +40,7 @@ const Page = async ({
     <div className='max-w-[850px] border-[1px] p-4 rounded-xl'>
       <h1 className="text-4xl"> Create An Agency</h1>
       <AgencyDetails
-      data={{ comapnyEmail: authUser?.emailAddresses[0].emailAddress }} />
+      data={{ companyEmail: authUser?.emailAddresses[0].emailAddress }} />
       </div>
     </div>
   )

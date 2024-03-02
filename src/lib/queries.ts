@@ -4,7 +4,6 @@ import { clerkClient, currentUser } from "@clerk/nextjs"
 import { db } from "./db"
 import { redirect } from "next/navigation"
 import { User } from ".prisma/client"
-import { current } from "tailwindcss/colors"
 import { Agency, Lane, Plan, Prisma, Role, SubAccount, Tag, Ticket } from "@prisma/client"
 import { v4 } from 'uuid'
 import { z } from 'zod'
@@ -34,7 +33,7 @@ export const getAuthUserDetails = async() => {
                     },
                 },
             }, 
-            Permission: true,
+            Permissions: true,
         },
     })
 
@@ -371,7 +370,7 @@ export const upsertSubAccount = async (subAccount: SubAccount) => {
 export const getUserPermissions = async (userId: string) => {
     const response = await db.user.findUnique({
         where: { id: userId },
-        select: { Permission: { include: { SubAccount: true }}},
+        select: { Permissions: { include: { SubAccount: true }}},
     })
     return response
 }
@@ -671,7 +670,7 @@ export const getSubAccountTeamMembers = async (subaccountId: string) => {
                 },
             },
             role: 'SUBACCOUNT_USER',
-            Permission: {
+            Permissions: {
                 some: {
                     subAccountId: subaccountId,
                     access: true,
@@ -767,7 +766,7 @@ export const upsertContact = async (
         return response
     }
 
-export const getFunneels = async (subaaccountId: string) => {
+export const getFunnels = async (subaaccountId: string) => {
     const funnels = await db.funnel.findMany({
         where: { subAccountId: subaaccountId },
         include: { FunnelPages: true },
