@@ -513,7 +513,7 @@ export const getPipelineDetails = async (pipelineId: string) => {
     return response
 }
 
-export const getLlanesWithTicketAndTags = async (pipelineId: string) => {
+export const getLanesWithTicketAndTags = async (pipelineId: string) => {
     const response = await db.lane.findMany ({
         where: {
             pipelineId,

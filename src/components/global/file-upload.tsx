@@ -51,8 +51,7 @@ const FileUpload = ({ apiEndpoint, onChange, value }: Props) => {
   }
   return (
     <div className="w-full bg-muted/30">
-      <UploadDropzone
-        endpoint={apiEndpoint}
+      <UploadDropzone endpoint={apiEndpoint}
         onClientUploadComplete={(res) => {
           onChange(res?.[0].url)
         }}
