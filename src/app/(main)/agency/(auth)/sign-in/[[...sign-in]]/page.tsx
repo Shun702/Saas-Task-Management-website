@@ -1,9 +1,8 @@
 import { SignIn } from '@clerk/nextjs'
-import { Sign } from 'crypto'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return <SignIn />
 }
 
-export default page
+export default Page
