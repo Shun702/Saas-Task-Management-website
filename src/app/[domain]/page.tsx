@@ -9,7 +9,7 @@ const Page = async ({
 }: {
   params: { domain: string; path: string }
 }) => {
-  const domainData = await getDomainContent(params.domain.slice(0, -1))
+  const domainData = await getDomainContent(params.domain)
   const pageData = domainData?.FunnelPages.find(
     (page) => page.pathName === params.path
   )
