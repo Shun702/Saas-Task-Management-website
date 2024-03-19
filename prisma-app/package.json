@@ -1,0 +1,11 @@
+{
+  "name": "bun-add--d-prisma",
+  "module": "bun add @prisma/client",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
